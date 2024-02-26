@@ -25,6 +25,7 @@ public class Product {
     private String kode;
     private String nama;
     private String satuan;
+    private double harga;
     
     
     public Product(){
@@ -35,6 +36,7 @@ public class Product {
         this.kode = kode;
         this.nama = nama;
         this.satuan = satuan;
+        this.harga = harga;
     }
 
     public Long getId() {
@@ -63,6 +65,14 @@ public class Product {
 
     public String getSatuan() {
         return satuan;
+    }
+
+    public double getHarga() {
+        return harga;
+    }
+
+    public void setHarga(double harga) {
+        this.harga = harga;
     }
 
     public void setSatuan(String satuan) {
