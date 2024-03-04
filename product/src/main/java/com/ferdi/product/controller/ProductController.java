@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.ferdi.product.controller;
-
 import com.ferdi.product.entity.Product;
 import com.ferdi.product.service.ProductService;
 import java.util.List;
@@ -35,26 +34,27 @@ public class ProductController {
     }
     
     @PostMapping
-    public void insert(@RequestBody Product product){
+    public void insert (@RequestBody Product product){
         productService.insert(product);
     }
     
-    @DeleteMapping(path = "{id}")
-    public void delete(@PathVariable ("id") Long id){
-        productService.delete(id);
+    @DeleteMapping(path = "{Id}")
+    public void delete(@PathVariable("Id") Long Id){
+        productService.delete(Id);
     }
     
-    @PutMapping(path = "{id}")
-    public void update(@PathVariable ("id") Long id,
+    @PutMapping(path = "{Id}")
+    public void update (@PathVariable("Id") Long Id,
         @RequestParam(required = false) String kode,
         @RequestParam(required = false) String nama,
         @RequestParam(required = false) String satuan,
-        @RequestParam(required = false) double harga){
-        productService.update(id, kode, nama, satuan,harga);
+        @RequestParam(required = false) double harga) {
+        productService.update(Id, kode, nama, satuan, harga);
     }
     
-    @GetMapping(path = "{id}")
-    public Product getProductById(@PathVariable("id")Long id){
-        return productService.getProductById(id);
+    @GetMapping(path = "{Id}")
+    public Product getProductById(@PathVariable("Id") Long Id){
+        return productService.getProductById(Id);
     }
+    
 }

@@ -4,20 +4,18 @@
  */
 package com.ferdi.order.entity;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.time.LocalDate;
 
 /**
  *
  * @author manusiahiu
  */
 
-@Table
+@Table (name = "t_order")
 @Entity
 public class Order {
     @Id
@@ -102,10 +100,5 @@ public class Order {
         sb.append('}');
         return sb.toString();
     }
-
-    
-
-    
-    
     
 }

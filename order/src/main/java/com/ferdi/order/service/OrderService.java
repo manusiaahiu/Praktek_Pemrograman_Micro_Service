@@ -22,7 +22,7 @@ public class OrderService {
     private OrderRepository orderRepository;
     
     public List<Order> getAll(){
-        return orderRepository.findall();
+        return orderRepository.findAll();
     }
     
     public Order getOrderById(long id){
@@ -56,7 +56,7 @@ public class OrderService {
         orderRepository.deleteById(id);
     }
 
-    public void update(Long id, Long produkId, int jumlah, String tanggal, String status, double total) {
+    public void update(Long id, String jumlah, String tanggal, String satuan) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
