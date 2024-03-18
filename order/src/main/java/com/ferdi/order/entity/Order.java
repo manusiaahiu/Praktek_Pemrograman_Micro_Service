@@ -26,17 +26,19 @@ public class Order {
     private String tanggal;
     private String status;
     private double total;
+    private Long productId;
     
     public Order(){
     }
 
-    public Order(Long id, Long orderId, int jumlah, String tanggal, String status, double total) {
+    public Order(Long id, Long orderId, Long productId, int jumlah, String tanggal, String status, double total) {
         this.id = id;
         this.orderId = orderId;
         this.jumlah = jumlah;
         this.tanggal = tanggal;
         this.status = status;
         this.total = total;
+        this.productId = productId;
     }
 
     public Long getId() {
@@ -49,6 +51,14 @@ public class Order {
 
     public Long getOrderId() {
         return orderId;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
     public void setOrderId(Long orderId) {

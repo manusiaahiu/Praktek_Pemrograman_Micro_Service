@@ -4,6 +4,8 @@
  */
 package com.ferdi.order.service;
 
+import com.ferdi.order.VO.Product;
+import com.ferdi.order.VO.ResponseTemplate;
 import com.ferdi.order.entity.Order;
 import com.ferdi.order.repository.OrderRepository;
 import jakarta.transaction.Transactional;
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -18,8 +21,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OrderService {
+    
     @Autowired
     private OrderRepository orderRepository;
+    private int toral;
+    
+    @Autowired
+    private RestTemplate restTemplate;
     
     public List<Order> getAll(){
         return orderRepository.findAll();
@@ -58,6 +66,16 @@ public class OrderService {
 
     public void update(Long id, String jumlah, String tanggal, String satuan) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public ResponseTemplate getOrderWithProdukById(Long id){
+        ResponseTemplate responseTemplate = new ResponseTemplate();
+        Order order = getOrderById(id);
+        Product product = restTemplate.getForObject("http://localhost:9002/api/v1/produk"
+                +order.getProductId(), Product.class);
+        responseTemplate.setOrder(order);
+        responseTemplate.setProduct(product);
+        return responseTemplate;
     }
 }
    

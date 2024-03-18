@@ -4,6 +4,7 @@
  */
 package com.ferdi.order.controller;
 
+import com.ferdi.order.VO.ResponseTemplate;
 import com.ferdi.order.entity.Order;
 import com.ferdi.order.service.OrderService;
 import java.util.List;
@@ -58,4 +59,10 @@ public class OrderController {
     public Order getOrderById(@PathVariable("Id")Long Id){
     return orderService.getOrderById(Id);
     }
+    
+    @GetMapping(path = "{/produk/{id}")
+    public ResponseTemplate getOrderWithProdukById(@PathVariable("id") Long id){
+        return orderService.getOrderWithProdukById(id);
+    }
+    
 }
