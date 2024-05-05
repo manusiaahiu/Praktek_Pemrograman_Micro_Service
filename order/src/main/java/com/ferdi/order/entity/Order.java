@@ -12,33 +12,30 @@ import jakarta.persistence.Table;
 
 /**
  *
- * @author manusiahiu
+ * @author muham
  */
-
-@Table (name = "t_order")
 @Entity
+@Table(name="t_order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long orderId;
-    private int jumlah;
+    private Long produkId;
+    private Integer jumlah;
     private String tanggal;
     private String status;
     private double total;
-    private Long productId;
     
     public Order(){
     }
-
-    public Order(Long id, Long orderId, Long productId, int jumlah, String tanggal, String status, double total) {
+    
+    public Order(Long id, Long produkId, Integer jumlah, String tanggal, String status, double total){
         this.id = id;
-        this.orderId = orderId;
+        this.produkId = produkId;
         this.jumlah = jumlah;
         this.tanggal = tanggal;
         this.status = status;
         this.total = total;
-        this.productId = productId;
     }
 
     public Long getId() {
@@ -49,27 +46,19 @@ public class Order {
         this.id = id;
     }
 
-    public Long getOrderId() {
-        return orderId;
+    public Long getProdukId() {
+        return produkId;
     }
 
-    public Long getProductId() {
-        return productId;
+    public void setProdukId(Long produkId) {
+        this.produkId = produkId;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
-
-    public int getJumlah() {
+    public Integer getJumlah() {
         return jumlah;
     }
 
-    public void setJumlah(int jumlah) {
+    public void setJumlah(Integer jumlah) {
         this.jumlah = jumlah;
     }
 
@@ -99,16 +88,8 @@ public class Order {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Order{");
-        sb.append("id=").append(id);
-        sb.append(", orderId=").append(orderId);
-        sb.append(", jumlah=").append(jumlah);
-        sb.append(", tanggal=").append(tanggal);
-        sb.append(", status=").append(status);
-        sb.append(", total=").append(total);
-        sb.append('}');
-        return sb.toString();
+        return "Order{" + "id=" + id + ", produkId=" + produkId + ", jumlah=" + jumlah + ", tanggal=" + tanggal + ", status=" + status + ", total=" + total + '}';
     }
+    
     
 }

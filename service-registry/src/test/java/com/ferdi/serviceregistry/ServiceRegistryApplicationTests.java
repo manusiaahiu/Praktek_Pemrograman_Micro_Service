@@ -1,4 +1,4 @@
-package com.ghaza.serviceregistry;
+package com.ferdi.serviceregistry;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
