@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ferdi.pembayaran.entity;
 
 import jakarta.persistence.Entity;
@@ -10,37 +6,29 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- *
- * @author USER
- */
-
 @Entity
-@Table
-
+@Table(name = "t_pembayaran")
 public class Pembayaran {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long orderId;
-    private String modePembayaran;
-    private String noReferensi;
-    private String tglBayar;
-    private double totalBayar;
-    
-    
+    private Long order_Id;
+    private String mode_pembayaran;
+    private String nomor_referensi;
+    private String tgl_bayar;
+    private double total_bayar;
+
     public Pembayaran(){
-    }
 
-    public Pembayaran(Long id, Long orderId, String modePembayaran, String noReferensi, String tglBayar, double totalBayar) {
+    }
+    public Pembayaran(Long id, Long order_Id, String mode_pembayaran, String nomor_referensi, String tgl_bayar, double total_bayar){
         this.id = id;
-        this.orderId = orderId;
-        this.modePembayaran = modePembayaran;
-        this.noReferensi = noReferensi;
-        this.tglBayar = tglBayar;
-        this.totalBayar = totalBayar;
+        this.order_Id = order_Id;
+        this.mode_pembayaran = mode_pembayaran;
+        this.nomor_referensi = nomor_referensi;
+        this.tgl_bayar = tgl_bayar;
+        this.total_bayar = total_bayar;
     }
-
     public Long getId() {
         return id;
     }
@@ -48,53 +36,45 @@ public class Pembayaran {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Long getOrderId() {
-        return orderId;
+    public Long getOrder_Id() {
+        return order_Id;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrder_Id(Long order_Id) {
+        this.order_Id = order_Id;
+    }
+    public String getMode_Pembayaran() {
+        return mode_pembayaran;
     }
 
-    public String getModePembayaran() {
-        return modePembayaran;
+    public void setMode_Pembayaran(String mode_pembayaran) {
+        this.mode_pembayaran = mode_pembayaran;
+    }
+    public String getNomor_Referensi() {
+        return nomor_referensi;
     }
 
-    public void setModePembayaran(String modePembayaran) {
-        this.modePembayaran = modePembayaran;
+    public void setNomor_Referensi(String nomor_referensi) {
+        this.nomor_referensi = nomor_referensi;
+    }
+    public String getTgl_Bayar() {
+        return tgl_bayar;
     }
 
-    public String getNoReferensi() {
-        return noReferensi;
+    public void setTgl_Bayar(String tgl_bayar) {
+        this.tgl_bayar = tgl_bayar;
+    }
+    public double getTotal_Bayar() {
+        return total_bayar;
     }
 
-    public void setNoReferensi(String noReferensi) {
-        this.noReferensi = noReferensi;
-    }
-
-    public String getTglBayar() {
-        return tglBayar;
-    }
-
-    public void setTglBayar(String tglBayar) {
-        this.tglBayar = tglBayar;
-    }
-
-    public double getTotalBayar() {
-        return totalBayar;
-    }
-
-    public void setTotalBayar(double totalBayar) {
-        this.totalBayar = totalBayar;
+    public void setTotal_Bayar(double total_bayar) {
+        this.total_bayar = total_bayar;
     }
 
     @Override
     public String toString() {
-        return "Pembayaran{" + "id=" + id + ", orderId=" + orderId + ", modePembayaran=" + modePembayaran + ", noReferensi=" + noReferensi + ", tglBayar=" + tglBayar + ", totalBayar=" + totalBayar + '}';
+        return "Pembayaran{" + "id=" + id + ", order_Id=" + order_Id + ", mode_pembayaran=" + mode_pembayaran + ", nomor_referensi=" + nomor_referensi + ", tgl_bayar=" + tgl_bayar + ", total_bayar=" + total_bayar + '}';
     }
-    
+
 }
-
-
-
